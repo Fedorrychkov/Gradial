@@ -1,0 +1,11 @@
+@import '../common/_variables.scss';
+
+.gradient-text {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    &__simple {
+        &--blue-to-red {
+            background-image: linear-gradient(240deg, #0551ff, #ff006c);
+        }
+    }
+}

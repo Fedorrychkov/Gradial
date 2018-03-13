@@ -1,3 +1,10 @@
 @import './common/_fonts.scss';
 @import './common/_variables.scss';
 @import './common/_reset.scss';
+@import './layout/_header.scss';
+@import './ui/_gradient-text.scss';
+
+.wrapper {
+    padding: $offset-xl;
+    box-sizing: border-box;
+}

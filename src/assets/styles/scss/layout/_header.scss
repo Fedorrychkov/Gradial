@@ -1,5 +1,13 @@
 @import '../common/_variables.scss';
 
 .header {
-
+    background-color: $lightest-color;
+    box-shadow: 0 7px 10px 0 rgba(157, 104, 172, 0.3);
+    & h1 {
+        font-size: 66px;
+        font-weight: bold;
+        line-height: 0.91;
+        text-align: left;
+        color: $focus-color;
+    }
 }
