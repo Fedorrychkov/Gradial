@@ -1,0 +1,46 @@
+$content-color:             #f7f9fb;
+
+$white-color:               #ffffff;
+$black-color:               #000000;
+$seafoam-color:             #93B38C;
+
+$rosy-color-pink:           #F4686E;
+$rosy-color-ligh:           #FFC2C3;
+
+$offset-base:               5px;
+$offset-mc:                 $offset-base;
+$offset-xs:                 $offset-base * 1.5;
+$offset-sm:                 $offset-base * 2;
+$offset-md:                 $offset-base * 3;
+$offset-lg:                 $offset-base * 4;
+$offset-xl:                 $offset-base * 5;
+$offset-xl-sm:              $offset-base * 6;
+$offset-xl-md:              $offset-base * 7;
+
+$gap-mc:                    $offset-base * 8;
+$gap-xs:                    $offset-base * 10;
+$gap-sm:                    $offset-base * 12;
+$gap-md:                    $offset-base * 14;
+$gap-lg:                    $offset-base * 16;
+$gap-xl:                    $offset-base * 18;
+
+$font-size-base:            16px;
+$font-size:                 1rem;
+$font-size-mc:              $font-size * .65;
+$font-size-xs:              $font-size;
+$font-size-sm:              $font-size * 1.25;
+$font-size-md:              $font-size * 1.5; // 24px
+$font-size-lg:              $font-size * 2.25;
+$font-size-xl:              $font-size * 2.75;
+$font-size-xl-sm:           $font-size * 3;
+$font-size-xxl:             $font-size * 3.25;
+
+$screen-sm:                 320px;
+$screen-md:                 720px;
+$screen-lg:                 1024px;
+$screen-xl:                 1440px;
+$screen-xl-md:              1560px;
+
+$animation-fast:            .15s;
+$animation-normal:          .30s;
+$animation-slow:            .45s;
