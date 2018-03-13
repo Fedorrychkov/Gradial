@@ -8,9 +8,11 @@
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
+        flex-wrap: wrap;
         margin: $offset-lg 0;
         & > * {
             margin-right: $offset-sm;
+            margin-bottom: $offset-lg;
         }
     }
 }

@@ -1,0 +1,52 @@
+@import '../common/_variables.scss';
+
+.gradial-input {
+    &__field {
+        position: relative;
+    }
+    &__control {
+        box-sizing: border-box;
+        padding: $offset-md $offset-md $offset-sm;
+        border: none;
+        position: relative;
+        box-shadow: inset 0 0 2px 0 $dark-color;
+        border-radius: $offset-mc;
+        transition: all $animation-fast;
+        &:focus {
+            box-shadow: inset 0 0 2px 0 $dark-color;
+        }
+        &.gradial-input__error {
+            box-shadow: inset 0 0 2px 0 $important-color;
+            color: $important-color;
+            &:focus {
+                box-shadow: inset 0 0 2px 0 $important-color;
+            }
+            & + .gradial-input__label {
+                color: $important-color;
+            }
+        }
+        &.gradial-input__success {
+            box-shadow: inset 0 0 2px 0 $success-color;
+            color: $success-color;
+            &:focus {
+                box-shadow: inset 0 0 2px 0 $success-color;
+            }
+            & + .gradial-input__label {
+                color: $success-color;
+            }
+        }
+        &:focus, &:not(:placeholder-shown) {
+            & + .gradial-input__label {
+                top: $offset-mc;
+                font-size: $font-size-sm*.7;
+            }
+        }
+    }
+    &__label {
+        font-size: $font-size-md;
+        position: absolute;
+        top: $offset-sm*1.3;
+        left: $offset-md;
+        transition: all $animation-fast;
+    }
+}
