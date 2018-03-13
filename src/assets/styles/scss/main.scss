@@ -1,10 +1,13 @@
-@import './common/_fonts.scss';
-@import './common/_variables.scss';
-@import './common/_reset.scss';
-@import './layout/_header.scss';
-@import './ui/_gradient-text.scss';
+@import './common/fonts';
+@import './common/variables';
+@import './common/reset';
+@import './shared/wrapper';
+@import './shared/section';
+@import './layout/header';
+@import './ui/gradient-text';
+@import './ui/button';
+@import './ui/font-size';
 
-.wrapper {
-    padding: $offset-xl;
-    box-sizing: border-box;
+.content {
+    padding: $offset-xl 0;
 }

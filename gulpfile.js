@@ -10,6 +10,7 @@ var gulp = require('gulp'),
     pngquant = require('imagemin-pngquant'),
     rimraf = require('rimraf'),
     browserSync = require("browser-sync"),
+    plumber = require("gulp-plumber"),
     reload = browserSync.reload;
 
 var path = {
@@ -68,8 +69,9 @@ gulp.task('js:build', function () {
 });
 
 gulp.task('style:build', function () {
-    gulp.src(path.src.style) //Выберем наш public-page.scss
+    gulp.src(path.src.style) //Выберем наш main.scss
         .pipe(sourcemaps.init()) //То же самое что и с js
+        .pipe(plumber())
         .pipe(sass()) //Скомпилируем
         .pipe(prefixer({
             browsers: ['last 2 versions', 'ie 11', 'Android >= 4.1', 'Safari >= 8', 'iOS >= 8'],

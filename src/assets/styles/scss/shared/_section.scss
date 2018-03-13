@@ -1,0 +1,16 @@
+@import '../common/_variables.scss';
+
+.section {
+    &-title {
+        font-weight: bold;
+    }
+    &__body {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: $offset-lg 0;
+        & > * {
+            margin-right: $offset-sm;
+        }
+    }
+}

@@ -1,14 +1,6 @@
 @import '../common/_variables.scss';
 
 .wrapper {
-    max-width: $screen-xl;
-    width: 100%;
-    margin: auto;
+    padding: $offset-xl;
     box-sizing: border-box;
-}
-
-@media (max-width: $screen-xl) {
-    .wrapper {
-        width: 90%;
-    }
 }
