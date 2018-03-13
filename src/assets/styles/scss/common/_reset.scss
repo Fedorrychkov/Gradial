@@ -3,7 +3,7 @@
  * ========================================== */
 
  html {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Proxima Nova Rg', sans-serif;
     line-height: 1.15;
     height: 100%;
     -ms-text-size-adjust: 100%;
@@ -16,7 +16,7 @@ body {
     height: 100%;
     background-color: $content-color;
     font-size: $font-size-base;
-    color: $darker-color;
+    color: $black-color;
     font-weight: normal;
     font-style: normal;
     // & *::selection  {
@@ -124,7 +124,7 @@ dfn {
 
 mark {
     background-color: $yellow-color;
-    color: $darker-color;
+    color: $black-color;
 }
 
 small {

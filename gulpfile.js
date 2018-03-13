@@ -24,7 +24,7 @@ var path = {
     src: { //Пути откуда брать исходники
         html: 'src/**/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
         js: 'src/assets/js/main.js',//В стилях и скриптах нам понадобятся только main файлы
-        publicStyle: 'src/assets/styles/scss/public-page.scss',
+        style: 'src/assets/styles/scss/main.scss',
         img: 'src/assets/img/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
         icons: 'src/assets/icons/**/*.*',
         fonts: 'src/assets/fonts/**/*.*'
@@ -32,7 +32,7 @@ var path = {
     watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
         html: 'src/**/*.html',
         js: 'src/assets/js/**/*.js',
-        publicStyle: 'src/assets/styles/scss/**/*.scss',
+        style: 'src/assets/styles/scss/**/*.scss',
         img: 'src/assets/img/**/*.*',
         icons: 'src/assets/icons/**/*.*',
         fonts: 'src/assets/fonts/**/*.*'
@@ -67,8 +67,8 @@ gulp.task('js:build', function () {
         .pipe(reload({stream: true})); //И перезагрузим сервер
 });
 
-gulp.task('publicStyle:build', function () {
-    gulp.src(path.src.publicStyle) //Выберем наш public-page.scss
+gulp.task('style:build', function () {
+    gulp.src(path.src.style) //Выберем наш public-page.scss
         .pipe(sourcemaps.init()) //То же самое что и с js
         .pipe(sass()) //Скомпилируем
         .pipe(prefixer({
@@ -106,7 +106,7 @@ gulp.task('icons:build', function() {
 gulp.task('build', [
     'html:build',
     'js:build',
-    'publicStyle:build',
+    'style:build',
     'fonts:build',
     'image:build',
     'icons:build'
@@ -116,8 +116,8 @@ gulp.task('watch', function(){
     watch([path.watch.html], function(event, cb) {
         gulp.start('html:build');
     });
-    watch([path.watch.publicStyle], function(event, cb) {
-        gulp.start('publicStyle:build');
+    watch([path.watch.style], function(event, cb) {
+        gulp.start('style:build');
     });
     watch([path.watch.js], function(event, cb) {
         gulp.start('js:build');
