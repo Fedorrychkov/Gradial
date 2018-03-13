@@ -1,6 +1,8 @@
 # Gradial
 Library of ui elements
 
+![gradial screen](gradial.png)
+
 Gradial has ui solutions of:
  - Buttons
  - Inputs
@@ -8,7 +10,6 @@ Gradial has ui solutions of:
  - lists
  - links
 
----
  ## How to use or add new solutions
 - git clone
 - npm start - for start gulp task runner
