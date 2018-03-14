@@ -1,0 +1,8 @@
+@import '../common/_variables.scss';
+
+.gradial-width {
+    &-sm {
+        max-width: $screen-sm;
+        width: 100%;
+    }
+}
