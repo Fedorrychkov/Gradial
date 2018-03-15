@@ -5,4 +5,16 @@
         max-width: $screen-sm;
         width: 100%;
     }
+    &-md {
+        max-width: $screen-md;
+        width: 100%;
+    }
+    &-lg {
+        max-width: $screen-lg;
+        width: 100%;
+    }
+    &-xl {
+        max-width: $screen-xl;
+        width: 100%;
+    }
 }
