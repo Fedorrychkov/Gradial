@@ -1,0 +1,22 @@
+@import '../common/_variables.scss';
+
+.gradial-fontsize {
+    &-mc {
+        font-size: $font-size-mc;
+    }
+    &-sm {
+        font-size: $font-size-sm;
+    }
+    &-md {
+        font-size: $font-size-md;
+    }
+    &-lg {
+        font-size: $font-size-lg;
+    }
+    &-xl {
+        font-size: $font-size-xl;
+    }
+    &-bold {
+        font-weight: bold;
+    }
+}

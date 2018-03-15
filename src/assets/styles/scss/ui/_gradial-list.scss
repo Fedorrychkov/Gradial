@@ -1,0 +1,29 @@
+@import '../common/_variables.scss';
+
+.gradial-list {
+    display: block;
+    padding: $offset-sm 0;
+    &-head {
+        border-bottom: 1px solid rgba(157, 104, 172, 0.2);
+        margin: $offset-sm 0;
+    }
+    &-item {
+        display: block;
+    }
+    &-link {
+        // display: inline-block;
+        display: block;
+        text-decoration: none;
+        color: $focus-color;
+        transition: all $animation-fast;
+        transform: translate(0, 0), scale(0);
+        transform-origin: 0;
+        &:hover {
+            color: $important-color;
+            transform: translate(-3px, 0);
+        }
+        &--mark {
+            font-weight: bold;
+        }
+    }
+}
