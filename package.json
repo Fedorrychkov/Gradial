@@ -1,15 +1,29 @@
 {
-  "name": "ui-kit",
+  "name": "gradial",
   "version": "0.0.1",
-  "description": "ui kit for web applications",
+  "description": "css library for web applications",
   "main": "index.js",
   "scripts": {
     "start": "gulp",
     "build": "gulp build",
     "clean": "gulp build:clean"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fedorrychkov/gradial.git"
+  },
+  "keywords": [
+    "scss",
+    "css",
+    "gradial",
+    "library",
+    "package"
+  ],
   "author": "Fyodor Rychkov",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fedorrychkov/gradial/issues"
+  },
   "devDependencies": {
     "browser-sync": "^2.23.6",
     "gulp": "^3.9.1",
