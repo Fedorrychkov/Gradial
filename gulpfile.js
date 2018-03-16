@@ -27,6 +27,7 @@ var path = {
         html: 'src/**/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
         js: 'src/assets/js/main.js',//В стилях и скриптах нам понадобятся только main файлы
         style: 'src/assets/styles/scss/gradial.scss',
+        simpleStyle: 'src/assets/styles/scss/simple.gradial.scss',
         img: 'src/assets/img/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
         icons: 'src/assets/icons/**/*.*',
         fonts: 'src/assets/fonts/**/*.*'
@@ -96,7 +97,39 @@ gulp.task('style.min:build', function () {
         .pipe(cssmin()) //Сожмем
         .pipe(sourcemaps.write())
         .pipe(rename({
-            name: 'gradial',
+            suffix: '.min'
+        }))
+        .pipe(gulp.dest(path.build.css))
+        .pipe(reload({stream: true}));
+});
+
+gulp.task('simple.style:build', function () {
+    gulp.src(path.src.simpleStyle) //Выберем наш main.scss
+        .pipe(sourcemaps.init()) //То же самое что и с js
+        .pipe(plumber())
+        .pipe(sass()) //Скомпилируем
+        .pipe(prefixer({
+            browsers: ['last 2 versions', 'ie 11', 'Android >= 4.1', 'Safari >= 8', 'iOS >= 8'],
+            cascade: false
+        })) //Добавим вендорные префиксы
+        .pipe(cssmin()) //Сожмем
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(path.build.css)) //И в build
+        .pipe(reload({stream: true}));
+});
+
+gulp.task('simple.style.min:build', function () {
+    gulp.src(path.src.simpleStyle) //Выберем наш main.scss
+        .pipe(sourcemaps.init()) //То же самое что и с js
+        .pipe(plumber())
+        .pipe(sass()) //Скомпилируем
+        .pipe(prefixer({
+            browsers: ['last 2 versions', 'ie 11', 'Android >= 4.1', 'Safari >= 8', 'iOS >= 8'],
+            cascade: false
+        })) //Добавим вендорные префиксы
+        .pipe(cssmin()) //Сожмем
+        .pipe(sourcemaps.write())
+        .pipe(rename({
             suffix: '.min'
         }))
         .pipe(gulp.dest(path.build.css))
@@ -134,6 +167,8 @@ gulp.task('build', [
     'html:build',
     'js:build',
     'style:build',
+    'simple.style:build',
+    'simple.style.min:build',
     'style.min:build',
     'fonts:build',
     'image:build',

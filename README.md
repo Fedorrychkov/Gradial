@@ -16,7 +16,7 @@ Gradial has ui solutions of:
 - `npm run clean` - for clean build folder
 
 ## How to use in your project
-- in head of your html file add link to css file `gradial.css ` or `gradial.min.css`
+- in head of your html file add link to css file `simple.gradial.css ` or `simple.gradial.min.css`
 
 ## Why?
  I'm front-end developer, and i want create my solutions for simple work with ui.
