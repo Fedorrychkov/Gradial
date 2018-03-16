@@ -6,15 +6,17 @@
         box-shadow: 0 7px 30px 0 rgba(157, 104, 172, 0.2);
         border-radius: $offset-mc;
         overflow: hidden;
+        background-color: $white-color;
     }
     &__control {
         box-sizing: border-box;
         padding: $offset-md $offset-md $offset-sm;
         border: none;
         position: relative;
-        // box-shadow: inset 0 0 2px 0 $dark-color;
+        z-index: 1;
         border-radius: $offset-mc;
         transition: all $animation-fast;
+        background: transparent;
         &:focus {
             // box-shadow: inset 0 0 2px 0 $dark-color;
         }
@@ -50,6 +52,7 @@
         position: absolute;
         top: $offset-sm*1.3;
         left: $offset-md;
+        z-index: 0;
         transition: all $animation-fast;
     }
 }

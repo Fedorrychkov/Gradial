@@ -1,6 +1,6 @@
 {
   "name": "gradial",
-  "version": "0.0.3",
+  "version": "0.0.31",
   "description": "css library for web applications",
   "main": "index.js",
   "scripts": {
