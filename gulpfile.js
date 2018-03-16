@@ -11,6 +11,7 @@ var gulp = require('gulp'),
     rimraf = require('rimraf'),
     browserSync = require("browser-sync"),
     plumber = require("gulp-plumber"),
+    rename = require('gulp-rename'),
     reload = browserSync.reload;
 
 var path = {
@@ -25,7 +26,7 @@ var path = {
     src: { //Пути откуда брать исходники
         html: 'src/**/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
         js: 'src/assets/js/main.js',//В стилях и скриптах нам понадобятся только main файлы
-        style: 'src/assets/styles/scss/main.scss',
+        style: 'src/assets/styles/scss/gradial.scss',
         img: 'src/assets/img/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
         icons: 'src/assets/icons/**/*.*',
         fonts: 'src/assets/fonts/**/*.*'
@@ -48,7 +49,7 @@ var config = {
     tunnel: true,
     host: 'localhost',
     port: 9000,
-    logPrefix: "Frontend_Devil"
+    logPrefix: "Gradial"
 };
 
 gulp.task('html:build', function () {
@@ -83,6 +84,25 @@ gulp.task('style:build', function () {
         .pipe(reload({stream: true}));
 });
 
+gulp.task('style.min:build', function () {
+    gulp.src(path.src.style) //Выберем наш main.scss
+        .pipe(sourcemaps.init()) //То же самое что и с js
+        .pipe(plumber())
+        .pipe(sass()) //Скомпилируем
+        .pipe(prefixer({
+            browsers: ['last 2 versions', 'ie 11', 'Android >= 4.1', 'Safari >= 8', 'iOS >= 8'],
+            cascade: false
+        })) //Добавим вендорные префиксы
+        .pipe(cssmin()) //Сожмем
+        .pipe(sourcemaps.write())
+        .pipe(rename({
+            name: 'gradial',
+            suffix: '.min'
+        }))
+        .pipe(gulp.dest(path.build.css))
+        .pipe(reload({stream: true}));
+});
+
 gulp.task('image:build', function () {
     gulp.src(path.src.img) //Выберем наши картинки
         .pipe(imagemin({ //Сожмем их
@@ -100,6 +120,11 @@ gulp.task('fonts:build', function() {
         .pipe(gulp.dest(path.build.fonts))
 });
 
+gulp.task('fonts:dist', function() {
+    gulp.src(path.src.fonts)
+        .pipe(gulp.dest(path.dist.fonts))
+});
+
 gulp.task('icons:build', function() {
     gulp.src(path.src.icons)
         .pipe(gulp.dest(path.build.icons))
@@ -109,6 +134,7 @@ gulp.task('build', [
     'html:build',
     'js:build',
     'style:build',
+    'style.min:build',
     'fonts:build',
     'image:build',
     'icons:build'
